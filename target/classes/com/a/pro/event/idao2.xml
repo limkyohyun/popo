@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.a.pro.event.Service2">
+<insert id="eventinput">
+insert into event(ebun,ename,startday,endday,eposter,eposterdetail,groups)
+values (ebun_seq2.nextval,#{param1},#{param2},#{param3},#{param4},#{param5},ebun_seq2.currval)
+</insert>
+
+<select id="eventout" resultType="com.a.pro.event.EventDTO">
+select * from event
+</select>
+
+<select id="eventdetail" resultType="com.a.pro.event.EventDTO">
+select * from event where ebun=#{param1}
+</select>
+
+<update id="readcnt">
+update event set readcnt = readcnt+1 where ebun = #{param1}
+</update>
+
+<delete id="eventdelete">
+delete event where ename=#{param1}
+</delete>
+
+<select id="eventmodify" resultType="com.a.pro.event.EventDTO">
+select * from event where ename=#{param1}
+</select>
+
+<update id="eventmodify2">
+update event set startday=#{param2}, endday=#{param3}, eposter =#{param4},  eposterdetail=#{param5} where ename=#{param1} 
+</update>
+
+<select id="searchename" resultType="com.a.pro.event.EventDTO">
+  select * from event where ename like '%' || #{param1} || '%'
+</select>
+
+
+
+</mapper>

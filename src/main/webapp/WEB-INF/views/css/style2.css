@@ -1,0 +1,102 @@
+@charset "UTF-8";
+#contaniner{
+	position:relative;
+	width:100%;
+	z-index:7;
+}
+div{
+	display:block;
+}
+#contents{
+	clear:both;
+	padding-bottom:50px;
+	position:relative;
+	width:980px;
+	margin:0 auto;
+}
+div[class^="sect-"]{
+	clear:both;
+	zoom:1;
+}
+.sect-common{
+	height:450px;
+	margin-top:25px;
+	overflow:hidden;
+	width:980px;
+}
+.favorite-wrap {
+	position:relative;
+	width:874px;
+	height:400px;
+	padding:60px 53px 0;
+	background-image:url("../image/theater_bg.gif")no-repeat 0 0;
+}
+.favorite-wrap .sect-city{
+	height:42px;
+	margin-top:18px;
+	border-top:2px solid #727171;
+	border-bottom:2px solid #727171;
+}
+.sect-city {
+	height:44px;
+	border-top:3px solid #241D1E;
+	line-height:44px;
+}
+.favorite-wrap .sect-city > ul{
+	position:relative;
+}
+.favorite-wrap .sect-city > ul > li.on .area {
+	display:block;
+}
+.favorite-wrap .sect-city > ul .area {
+	position: absolute;
+	top:50px;
+	left:10px;
+	width:854px;
+}
+.favorite-wrap .sect-city > ul > li * li {
+	margin:6px 25px 0 0;
+}
+.sect-city li {
+	float:left;
+	margin:0 8px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 100%;
+    padding:0;
+    border:0;
+    vertical-align:baseline;
+    word-break:break-all;
+}
+li{
+	display:list-item;
+	text-align:-webkit-match-parent;
+}
+.favorite-wrap .sect-city > ul > li * li.on > a {
+	background:none;
+}
+.favorite-wrap .sect-city ul > li.on > a, .favorite-wrap .sect-city ul > li a:hover, .favorite-wrap .sect-city ul > li a:focus {
+	color:#ffffff !important;
+}
+.favorite-wrap .sect-city ul > li * li > a {
+	position:relative;
+	padding:0;
+	font-size:12px;
+	line-height:31px;
+	text-align:left;
+}
+.sect-city li > a {
+	display:block;
+	font-weight:500;
+}
+a:-webkit-any-link{
+	cursor:pointer;
+}
+ul{
+	list-style:none;
+}
+.sect-city{
+	height:44px;
+	border-top:3px solid #241D1E;
+}

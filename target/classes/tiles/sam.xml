@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/views/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+	</definition>	   
+	<definition name="main" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+	</definition>
+	
+		<definition name="moviechart_input" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_input.jsp"/>
+	</definition>
+	
+			<definition name="moviechart_out" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_out.jsp"/>
+	</definition>
+	 
+	 	<definition name="moviechart_detail" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_detail.jsp"/>
+	</definition>
+	
+		<definition name="moviechart_modify" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_modify.jsp"/>
+	</definition>
+	
+			<definition name="moviechart_dd" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_dd.jsp"/>
+	</definition>
+	
+			 	<definition name="moviechart_stillcut" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_stillcut.jsp"/>
+	</definition>
+	
+				<definition name="moviechart_out2" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/movie/moviechart_out2.jsp"/>
+	</definition>
+		<definition name="member_join" extends="baseLayout">
+		<put-attribute name="title" value="회원가입"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_join.jsp"/>
+	</definition>
+	<definition name="member_login" extends="baseLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_login.jsp"/>
+	</definition>
+	
+		<definition name="event_input" extends="baseLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/views/event/event_input.jsp"/>
+	</definition>
+	
+			<definition name="event_out" extends="baseLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/views/event/event_out.jsp"/>
+	</definition>
+	
+				<definition name="event_detail" extends="baseLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/views/event/event_detail.jsp"/>
+	</definition>
+	
+					<definition name="event_modify" extends="baseLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/views/event/event_modify.jsp"/>
+	</definition>
+	
+	<definition name="theaterinput" extends="baseLayout">
+		<put-attribute name="title" value="CGV강남 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterinput.jsp"/>
+	</definition>
+	<definition name="theaterin2" extends="baseLayout">
+		<put-attribute name="title" value="CGV강변 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin2.jsp"/>
+	</definition>
+	<definition name="theaterin3" extends="baseLayout">
+		<put-attribute name="title" value="CGV건대입구 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin3.jsp"/>
+	</definition>
+	<definition name="theaterin4" extends="baseLayout">
+		<put-attribute name="title" value="CGV구로 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin4.jsp"/>
+	</definition>
+	<definition name="theaterin5" extends="baseLayout">
+		<put-attribute name="title" value="CGV대학로 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin5.jsp"/>
+	</definition>
+	
+		<definition name="theaterin6" extends="baseLayout">
+		<put-attribute name="title" value="CGV강변 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin6.jsp"/>
+	</definition>
+	<definition name="theaterin7" extends="baseLayout">
+		<put-attribute name="title" value="CGV건대입구 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin7.jsp"/>
+	</definition>
+	<definition name="theaterin8" extends="baseLayout">
+		<put-attribute name="title" value="CGV구로 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin8.jsp"/>
+	</definition>
+	<definition name="theaterin9" extends="baseLayout">
+		<put-attribute name="title" value="CGV대학로 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin9.jsp"/>
+	</definition>
+	
+		<definition name="theaterin10" extends="baseLayout">
+		<put-attribute name="title" value="CGV대학로 극장"/>
+		<put-attribute name="body" value="/WEB-INF/views/theater/theaterin10.jsp"/>
+	</definition>
+	
+	<definition name="map" extends="baseLayout">
+		<put-attribute name="title" value="지도_강남"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map.jsp"/>
+	</definition>
+	<definition name="map2" extends="baseLayout">
+		<put-attribute name="title" value="지도_강변"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map2.jsp"/>
+	</definition>
+	<definition name="map3" extends="baseLayout">
+		<put-attribute name="title" value="지도_건대입구"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map3.jsp"/>
+	</definition>
+	<definition name="map4" extends="baseLayout">
+		<put-attribute name="title" value="지도_구로"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map4.jsp"/>
+	</definition>
+	<definition name="map5" extends="baseLayout">
+		<put-attribute name="title" value="지도_대학로"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map5.jsp"/>
+	</definition>
+	<definition name="map6" extends="baseLayout">
+		<put-attribute name="title" value="지도_"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map6.jsp"/>
+	</definition>
+	<definition name="map7" extends="baseLayout">
+		<put-attribute name="title" value="지도_"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map7.jsp"/>
+	</definition>
+	<definition name="map8" extends="baseLayout">
+		<put-attribute name="title" value="지도_"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map8.jsp"/>
+	</definition>
+	<definition name="map9" extends="baseLayout">
+		<put-attribute name="title" value="지도_"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map9.jsp"/>
+	</definition>
+	<definition name="map10" extends="baseLayout">
+		<put-attribute name="title" value="지도_"/>
+		<put-attribute name="body" value="/WEB-INF/views/map/map10.jsp"/>
+	</definition>
+</tiles-definitions>

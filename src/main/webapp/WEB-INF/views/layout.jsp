@@ -17,7 +17,7 @@
 }
 #nav {
 	width: 100%;
-	height: 100px;
+	height: 150px;
 }
 #body {
 	text-align: center;

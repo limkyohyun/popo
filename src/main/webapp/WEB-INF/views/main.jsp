@@ -175,7 +175,7 @@ margin-top:0px;
    <a href="eventout">더 많은 이벤트 보기</a>
    </div> 
     <div class="col-md-4">
-      <img src="/pro/image/파벨만스.jfif" align="right" style="width:100%; height: 630px; padding-right: 0px;">
+      <img src="/pro/image/파벨만스.jfif" align="right" style="width:100%; height: 620px; padding-right: 0px;">
     </div>
 </div>
 </div>

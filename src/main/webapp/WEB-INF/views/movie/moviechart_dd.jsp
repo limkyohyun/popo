@@ -32,6 +32,24 @@
 -->
 <!DOCTYPE html>
 <html>
+<style>
+		.seat {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border: 1px solid black;
+			margin: 5px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 10px;
+			cursor: pointer;
+		}
+		.selected {
+			background-color: yellow;
+		}
+
+</style>
+
 <head>
 <meta charset="UTF-8">
 
@@ -50,6 +68,7 @@
 
 
 </head>
+
 <body>
 
 
@@ -109,25 +128,119 @@
 			</tr>
 			<tr>
 				<td style="text-align: center;">영화</td>
-				<td id="movieimg" >
-				<span id="moviename"></span>
+				<td id="movie" >
+				<select name="pickMovie" id="movie">
+           		 <c:forEach var="i" begin="0" end="${fn:length(list)-1}" step="1">
+                <option class="price" value="10000">${list[i].mname}</option>
+                        </c:forEach>
+            </select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td style="text-align: center;" >상영시간</td>
+				<td id="movietime">
+				<input type="checkbox" name="time" value="10시">10시
+				<input type="checkbox" name="time" value="11시">11시
+				<input type="checkbox" name="time" value="12시">12시
+				<input type="checkbox" name="time" value="13시">13시
+				<input type="checkbox" name="time" value="14시">14시
+				<input type="checkbox" name="time" value="15시">15시
+				<input type="checkbox" name="time" value="16시">16시
+				<input type="checkbox" name="time" value="17시">17시
 				</td>
 			</tr>
 			<tr>
-				<td style="text-align: center;" >상영시간</td>
-				<td id="movietime"></td>
-			</tr>
-			<tr>
 				<td  style="text-align: center;">인원선택</td>
-				<td id="peopleCnt"></td>
+				<td id="peopleCnt">
+				<select name="count" id="count" onchange="changeSelection()">
+				<option value="" selected>---선택---</option>
+				<option value="2" >2</option>
+				<option value="3" >3</option>
+				<option value="4" >4</option>
+				<option value="5" >5</option>
+				<option value="6" >6</option>
+				</select>
+				</td>
 			</tr>
 			<tr>
 				<td style="text-align: center;">좌석선택</td>
-				<td id="seat"></td>
+				<td id="seat">
+	<h1>좌석 예매</h1>
+	<p>원하는 좌석을 선택해주세요.</p>
+	<div id="seat-map">
+		<div class="seat">A1</div>
+		<div class="seat">A2</div>
+		<div class="seat">A3</div>
+		<div class="seat">A4</div>
+		<div class="seat">A5</div>
+		<div class="seat">A6</div>
+		<div class="seat">A7</div>
+		<div class="seat">A8</div>
+		<div class="seat">A9</div>
+		<div class="seat">A10</div>
+	</div>
+	
+	<div id="seat-map">
+		<div class="seat">A1</div>
+		<div class="seat">A2</div>
+		<div class="seat">A3</div>
+		<div class="seat">A4</div>
+		<div class="seat">A5</div>
+		<div class="seat">A6</div>
+		<div class="seat">A7</div>
+		<div class="seat">A8</div>
+		<div class="seat">A9</div>
+		<div class="seat">A10</div>
+	</div>
+	
+		<div id="seat-map">
+		<div class="seat">B1</div>
+		<div class="seat">B2</div>
+		<div class="seat">B3</div>
+		<div class="seat">B4</div>
+		<div class="seat">B5</div>
+		<div class="seat">B6</div>
+		<div class="seat">B7</div>
+		<div class="seat">B8</div>
+		<div class="seat">B9</div>
+		<div class="seat">B10</div>
+	</div>
+	
+		<div id="seat-map">
+		<div class="seat">C1</div>
+		<div class="seat">C2</div>
+		<div class="seat">C3</div>
+		<div class="seat">C4</div>
+		<div class="seat">C5</div>
+		<div class="seat">C6</div>
+		<div class="seat">C7</div>
+		<div class="seat">C8</div>
+		<div class="seat">C9</div>
+		<div class="seat">C10</div>
+	</div>
+	
+		<div id="seat-map">
+		<div class="seat">D1</div>
+		<div class="seat">D2</div>
+		<div class="seat">D3</div>
+		<div class="seat">D4</div>
+		<div class="seat">D5</div>
+		<div class="seat">D6</div>
+		<div class="seat">D7</div>
+		<div class="seat">D8</div>
+		<div class="seat">D9</div>
+		<div class="seat">D10</div>
+	</div>
+	<button onclick="bookSeats()">확인하기</button>
+				
+				</td>
 			</tr>
 			<tr>
 				<td style="text-align: center;">결제금액</td>
-				<td id="pay"></td>
+				<td id="pay">
+				<span id="costs">0</span>원
+				</td>
 			</tr>
 		</table>
 		
@@ -153,12 +266,55 @@
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="${path}/resources/JS/reserve/reserveuser.js"></script>
+	<script>
+	
+	
+		var selectedSeats = [];
+		let costs = document.querySelector('#costs'); // 가격
+		var maxSeats;
+		
+		function changeSelection(){
+			var count = document.getElementById("count");
+		    
+		    // 선택한 option의 value, 텍스트
+		     maxSeats = count.options[count.selectedIndex].value;
+		     costs.textContent = maxSeats * 10000;
+		}
+		
+		function selectSeat(seat) {
+			if (selectedSeats.length < maxSeats || seat.classList.contains("selected")) {
+					// 최대 선택 가능한 좌석 수보다 적거나, 이미 선택한 좌석일 경우에는 선택 가능
+				seat.classList.toggle("selected");
+				var index = selectedSeats.indexOf(seat.innerHTML);
+				if (index === -1) {
+					selectedSeats.push(seat.innerHTML);
+				} else {
+					selectedSeats.splice(index, 1);
+				}
+				document.getElementById("count").innerHTML = selectedSeats.length;
+			} else {
+				alert("한 번에 최대 " + maxSeats + "개까지 선택 가능합니다.");
+			}
+		}
 
+		function bookSeats() {
+			if (selectedSeats.length === 0) {
+				alert("좌석을 선택해주세요.");
+			} else {
+				alert("선택한 좌석: " + selectedSeats.join(", "));
+			}
+		}
+
+		var seats = document.getElementsByClassName("seat");
+		for (var i = 0; i < seats.length; i++) {
+			seats[i].addEventListener("click", function() {
+				selectSeat(this);
+			});
+		}
+	</script>
 
 
 
 </body>
 </html>
 <!-- 	<script>alert("로그인이 필요합니다"); location.href="../login"</script> -->
-
-</html>

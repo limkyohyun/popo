@@ -14,14 +14,17 @@
 #header {
 	text-align: center;
 	width: 100%;
+	height: 300px;
 }
 #nav {
 	width: 100%;
-	height: 150px;
+	height: 300px;
 }
 #body {
 	text-align: center;
 	width: 100%;
+	padding-top:0px;
+	padding-bottom: 200px;
 }
 #footer {
        position: relative;
@@ -48,8 +51,15 @@ th,td{
 		</div>
 		<div id="body">
 			<t:insertAttribute name="body"/>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 		</div>
 		<div id="footer">
+		&emsp;
+		&emsp;
+		&emsp;
+		&emsp;
+		&emsp;
+		&emsp;
 			<t:insertAttribute name="footer"/>
 		</div>
 	</div>

@@ -1,11 +1,14 @@
 package com.a.pro.member;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -58,7 +61,7 @@ public class MemberController {
 			ra.addAttribute("result", "loginfail");
 			return "redirect:loginin";
 		}
-		return "main";
+		return "redirect:main";
 	}
 	@RequestMapping(value="/logout")
 	public String ko5(HttpServletRequest request) {
@@ -67,6 +70,17 @@ public class MemberController {
 		hs.removeAttribute("dto");
 		hs.removeAttribute("login");
 		hs.setAttribute("login", false);
-		return "main";
+		return "redirect: main";
+	}
+	
+	@RequestMapping(value="/member_MY")
+	public String ko6(HttpServletRequest request,Model mo) {
+		String id = request.getParameter("id");
+		System.out.println("아이디는 "+id);
+		Service2 ss2 = sqlsession.getMapper(Service2.class);
+		ArrayList<MemberDTO> list = ss2.mycgv(id);
+		mo.addAttribute("list",list);
+		
+		return "member_MYCGV";
 	}
 }

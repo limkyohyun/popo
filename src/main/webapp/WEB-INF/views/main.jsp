@@ -8,7 +8,7 @@
 <style>
 
 .row1{
-margin-top: 70px;
+margin-top: 80px;
 }
 .btn{
  background-color: skyblue;
@@ -21,15 +21,15 @@ margin-top: 70px;
 	  padding-right: 10px;
 }
 
-.body {
-margin: 0;
+body {
+padding-top:-30px;
       }
       
 .wrap {
-margin-top:0px;
+margin-top:-50px;
   background: url(/pro/image/그라데이션.jfif);
   background-size: cover;
-  height: 85vh;
+  height: 100vh;
 }
 
 </style>

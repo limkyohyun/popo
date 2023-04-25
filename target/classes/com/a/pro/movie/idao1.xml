@@ -45,6 +45,10 @@ update moviechart set gerne=#{param2}, director=#{param3}, actor =#{param4},  da
 select * from moviechart where mname=#{param1}
 </select>
 
+<insert id="movieticketinsert">
+insert into movieticket2 values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6})
+</insert>
+
 <insert id="stillcut">
 insert into stillcut values(#{param1},#{param2})
 </insert>

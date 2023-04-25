@@ -7,6 +7,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+  
+  <style>
+table{
+ padding-top: 1000px;
+ }
+  
+  </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
@@ -74,7 +81,8 @@
 
 
 <form action="moviechartsearchsave" method="post" >
-<table border="1" align="center">  	
+
+<table border="1" align="center"  >  	
 	<tr>
 	<td colspan="2">
 	검색

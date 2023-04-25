@@ -8,7 +8,7 @@
 <style>
 
 .row1{
-margin-top: 70px;
+margin-top: 80px;
 }
 .btn{
  background-color: skyblue;
@@ -21,15 +21,15 @@ margin-top: 70px;
 	  padding-right: 10px;
 }
 
-.body {
-margin: 0;
+body {
+padding-top:-30px;
       }
       
 .wrap {
-margin-top:0px;
+margin-top:-50px;
   background: url(/pro/image/그라데이션.jfif);
   background-size: cover;
-  height: 85vh;
+  height: 100vh;
 }
 
 </style>
@@ -175,7 +175,7 @@ margin-top:0px;
    <a href="eventout">더 많은 이벤트 보기</a>
    </div> 
     <div class="col-md-4">
-      <img src="/pro/image/파벨만스.jfif" align="right" style="width:100%; height: 630px; padding-right: 0px;">
+      <img src="/pro/image/파벨만스.jfif" align="right" style="width:100%; height: 620px; padding-right: 0px;">
     </div>
 </div>
 </div>

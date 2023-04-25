@@ -19,4 +19,6 @@ public  ArrayList<MovieDTO> searchgerne(String value);
 public void stillcut(String mname, String mposter);
 public ArrayList<MovieDTO> movieddd(String mname);
 public ArrayList<MovieDTO> stillcutout();
+
+public void movieticketinsert(String id, String day,String mname,String time,String seat,String pay);
 } 

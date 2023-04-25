@@ -3,9 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-
-</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -13,7 +10,6 @@
 <form action="moviechartsave" method="post" enctype="multipart/form-data">
 <table border="1" align="center">
 <h2>영화 자료입력</h2>
-&emsp;
 <tr>
 <th>영화제목</th>
 <td>
@@ -21,19 +17,6 @@
 </td>
 </tr>
 
-<tr>
-<th>감독</th>
-<td>
-<input type="text" name="director">
-</td>
-</tr>
-
-<tr>
-<th>배우</th>
-<td>
-<input type="text" name="actor">
-</td>
-</tr>
 
 <tr>
 <th>상영시간</th>

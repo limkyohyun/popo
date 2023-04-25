@@ -46,7 +46,31 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 	 return "moviechart_dd";
 	 }
    
+   
     
+   @RequestMapping(value="/movieticketsave")
+   public String ko11(HttpServletRequest request) {
+		
+
+	   String id = request.getParameter("id");
+	  String day = request.getParameter("day");
+	  String mname = request.getParameter("mname");
+	  String time = request.getParameter("time");
+	   String[] seat2 = request.getParameterValues("seat");
+	   String seat ="";
+	   for(int i=0; i<seat2.length;i++) {
+		   seat+=seat2[i]+"";
+	   }
+	   
+	  String pay = request.getParameter("pay");
+	  
+	  System.out.println(id+day+"영화제목"+mname+"시간"+time+"좌석"+seat+"금액"+pay);
+	   Service1 ss1 = sqlSession.getMapper(Service1.class);
+	   ss1.movieticketinsert(id,day,mname,time,seat,pay);
+	   
+	 return "redirect:main";
+	 
+	 }
    @RequestMapping(value="/moviechartsave",method = RequestMethod.POST)
    public String ko2(MultipartHttpServletRequest mul ) {
 	   String mname =mul.getParameter("mname");
@@ -162,7 +186,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 	   Service1 ss1 = sqlSession.getMapper(Service1.class);
 	   ss1.moviemodify2(mname,gerne2,director,actor,day,time,show,mposter,stillposter1,stillposter2,stillposter3,stillposter4,stillposter5);
 	   
-	 return "main";
+	 return "redirect: main";
 	 }
    
    @RequestMapping(value ="/moviechartsearchsave" )

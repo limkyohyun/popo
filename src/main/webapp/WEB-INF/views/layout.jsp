@@ -8,6 +8,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
 #container {
 	border: 1px slid #bcbcbc;
 }
@@ -25,6 +28,7 @@
 	width: 100%;
 	padding-top:0px;
 	padding-bottom: 200px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 #footer {
        position: relative;

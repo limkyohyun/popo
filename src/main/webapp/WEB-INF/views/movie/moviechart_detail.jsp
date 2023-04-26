@@ -34,7 +34,7 @@
 	 <c:set  var="day" value="${my.day}"></c:set>
 	개봉 : ${fn:substring(day, 0, 10)} <br><br><br>
     
-    <a href="" class="btn btn-danger" style="margin-bottom: 20px">예매하기</a>
+    <a href="moviechardd?mname=${my.mname}" class="btn btn-danger" style="margin-bottom: 20px">예매하기</a>
     
     </div>
   </div>
@@ -43,16 +43,15 @@
 <br>
 
     <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="margin-bottom: 20px">
-  <a href=""><button type="button" class="btn btn-danger">주요정보</button></a>
-  <a href="#tag1"><button type="button" class="btn btn-danger">상세내용</button></a> 
- <a href="#tag2"><button type="button" class="btn btn-danger">스틸컷</button></a>
- <a href="stllcut"><button type="button" class="btn btn-primary">스틸컷이미지추가</button></a>
+  <a href=""><button type="button" class="btn btn-primary">주요정보</button></a>
+  <a href="#tag1"><button type="button" class="btn btn-primary">상세내용</button></a> 
+ <a href="#tag2"><button type="button" class="btn btn-primary">스틸컷</button></a>
 </div><br>	
 	<hr style="margin-top: 10px">
     <h3 id="tag1">상세내용</h3>	
     <hr>
     
-      <div> ${my.show} </div>
+      <div><pre> ${my.show}</pre> </div>
     <hr>
     <h3 id="tag2">스틸컷</h3>
     <hr>

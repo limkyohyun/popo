@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
         <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+        <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +25,13 @@
     <c:forEach var="i" begin="0" end="${fn:length(list)-1}" step="1">
     <tr>
     
-      <th scope="row">1</th>
+      <th scope="row">${i+1}</th>
       <td>${list[i].day}</td>
       <td>${list[i].mname}</td>
-      <td>${list[i].time}</td>
+      <td>${list[i].time}:00</td>
       <td>${list[i].seat}</td>
-      <td>${list[i].pay}</td>
+      <td>
+      <fmt:formatNumber value="${list[i].pay}" pattern="#,###"/>원</td>
     </tr>
     </c:forEach>
 

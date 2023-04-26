@@ -19,19 +19,21 @@ padding-left: 800px;
 }
 </style>
 
+<c:set var="result" value="${param.result}"/>
+<c:set var="result2" value="${param.result2}"/>
 <c:choose>
-	<c:when test="${param.result == 'loginfail'}">
+	<c:when test="${result=='loginfail' }">
 		<script type="text/javascript">
-		Swal.fire({
-			position: 'center',
-			icon: 'error',
-			title: '아이디 혹은 비밀번호가 틀림',
-			showConfirmButton: false,
-			timer: 1500
-		})
+			alert("로그인후 사용하세요!");
+		</script>
+	</c:when>
+	<c:when test="${result2=='loginfail' }">
+		<script type="text/javascript">
+			alert("아이디나패스워드 에러!!");
 		</script>
 	</c:when>
 </c:choose>
+
 <title>상단부</title>
 </head>
 <header>
@@ -108,18 +110,7 @@ CULTUREPLEX
 		</li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<c:choose>
-			<c:when test="${login==true && dto != null}">
-				<li><a href="logout">${dto.id}님 환영합니다</a></li>
-				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>로그아웃</a></li>
-			</c:when>
 
-			<c:otherwise>
-				<li><a href="member_jo"><span class="glyphicon glyphicon-user"></span>회원가입</a></li>
-				<li><a href="member_lo"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li>
-			</c:otherwise>
-
-		</c:choose>
 	</ul>
 	</div>
 	</div>

@@ -34,6 +34,7 @@ public class MemberController {
 		ss2.insert(id, pw, name, jumin, phone, address, email);
 		return "redirect:member_jo";
 	}
+	
 	@ResponseBody
 	@RequestMapping(value="/idcheck")
 	public String ko3(String id) {
@@ -62,11 +63,12 @@ public class MemberController {
 			return "redirect:loginin";
 		}
 		return "redirect:main";
-	}
+	}   
 	@RequestMapping(value="/logout")
 	public String ko5(HttpServletRequest request) {
 		Service2 ss2 = sqlsession.getMapper(Service2.class);
 		HttpSession hs = request.getSession();
+		
 		hs.removeAttribute("dto");
 		hs.removeAttribute("login");
 		hs.setAttribute("login", false);
@@ -75,12 +77,12 @@ public class MemberController {
 	
 	@RequestMapping(value="/member_MY")
 	public String ko6(HttpServletRequest request,Model mo) {
-		String id = request.getParameter("id");
-		System.out.println("아이디는 "+id);
-		Service2 ss2 = sqlsession.getMapper(Service2.class);
+			String id = request.getParameter("id");
+			Service2 ss2 = sqlsession.getMapper(Service2.class);
 		ArrayList<MemberDTO> list = ss2.mycgv(id);
 		mo.addAttribute("list",list);
 		
 		return "member_MYCGV";
 	}
-}
+
+		  }	 

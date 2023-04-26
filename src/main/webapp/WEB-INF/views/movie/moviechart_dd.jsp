@@ -15,7 +15,7 @@
 <!--  예매 (사용자) 
 <c:choose>
 
-	<c:when test="${param.result == 'loginfail'}">
+	<c:when test="${param.re  sult == 'loginfail'}">
 		<script type="text/javascript">
 		Swal.fire({
 			position: 'center',

@@ -3,9 +3,11 @@
     <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
         <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
+
 <html>
 
 <style>
+
 
 .row1{
 margin-top: 80px;
@@ -23,6 +25,7 @@ margin-top: 80px;
 
 body {
 padding-top:-30px;
+
       }
       
 .wrap {
@@ -32,6 +35,7 @@ margin-top:-50px;
   height: 100vh;
 }
 
+
 </style>
 
 <head>
@@ -39,8 +43,10 @@ margin-top:-50px;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bowlby+One+SC&family=Bungee&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     
     <title>Document</title>
+    
     
     
 </head>
@@ -49,13 +55,12 @@ margin-top:-50px;
 
 
 <body>
+
 <div class="wrap">
 
  <div class="container text-center">
  
  <div class="row">
-
-
 
    <div class="row1">
     <div class="col" style="color: white;">
@@ -100,8 +105,9 @@ margin-top:-50px;
 	     	<option value="gerne">장르</option>
 	     </select>
 	     
-  <input type="text" name ="value" class="form-control" placeholder="영화이름을 입력해주세요" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색하기</button>
+  <input type="text" name ="value" class="form-control" placeholder="영화이름을 입력해주세요" aria-label="Recipient's username" aria-describedby="button-addon2" style="width: 290px; margin-left: 15px;">
+  &emsp;
+  <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="width: 290px; margin-left: -40px;">검색하기</button>
 </form>
 </div>
 
